@@ -1,10 +1,11 @@
 "use client";
 
-import { Phone, ShieldCheck } from "lucide-react";
+import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { siteConfig } from "@/config/site-config";
 import { cn } from "@/utils/cn";
+import Logo from "@/components/ui/logo";
 
 export default function MinimalHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,12 +35,18 @@ export default function MinimalHeader() {
         {/* Brand lockup — no nav links, keeps focus on the form */}
         <a
           href="#top"
-          className="flex items-center gap-2.5"
+          className="flex items-center gap-3"
           aria-label={siteConfig.businessName}
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-primary text-white shadow-glow">
-            <ShieldCheck className="h-5 w-5" />
-          </span>
+          <Logo
+            type="mark"
+            variant="white"
+            priority
+            className={cn(
+              "transition-all duration-500",
+              isScrolled ? "h-8" : "h-9"
+            )}
+          />
           <span className="leading-none">
             <span className="block font-display text-base font-bold tracking-tight text-white sm:text-lg">
               Multi Risk <span className="text-brand-accent">Brokers</span>

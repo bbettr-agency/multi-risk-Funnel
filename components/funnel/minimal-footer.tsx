@@ -1,5 +1,6 @@
-import { Clock, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site-config";
+import Logo from "@/components/ui/logo";
 
 export default function MinimalFooter() {
   return (
@@ -10,17 +11,12 @@ export default function MinimalFooter() {
           <div>
             <a
               href="#top"
-              className="flex items-center gap-2.5"
+              className="inline-block"
               aria-label={siteConfig.businessName}
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-primary text-white">
-                <ShieldCheck className="h-5 w-5" />
-              </span>
-              <span className="font-display text-lg font-bold tracking-tight text-white">
-                Multi Risk <span className="text-brand-accent">Brokers</span>
-              </span>
+              <Logo type="full" variant="white" className="h-28" />
             </a>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-white/55">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-white/55">
               {siteConfig.description}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
