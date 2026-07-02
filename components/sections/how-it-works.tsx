@@ -2,36 +2,35 @@
 
 import { motion } from "framer-motion";
 
-import { steps } from "@/config/funnel-config";
+import { howItWorks } from "@/config/funnel-config";
 import { siteConfig } from "@/config/site-config";
 import SectionContainer from "@/components/layout/section-container";
 import SectionHeading from "@/components/ui/section-heading";
 
 export default function HowItWorks() {
   return (
-    <SectionContainer className="bg-brand-mist text-brand-ink">
+    <SectionContainer className="bg-white text-brand-ink">
       <SectionHeading
         tone="light"
         align="center"
-        eyebrow="How It Works"
-        title="Your quote in four simple steps"
-        description="No jargon, no pressure — just a clear path from request to the right cover."
+        eyebrow={howItWorks.eyebrow}
+        title={howItWorks.title}
+        description={howItWorks.description}
       />
 
-      <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {/* connecting line on large screens */}
-        <div className="pointer-events-none absolute left-0 right-0 top-[2.25rem] hidden h-px bg-gradient-to-r from-transparent via-brand-primary/25 to-transparent lg:block" />
+      <div className="relative grid gap-6 md:grid-cols-3">
+        <div className="pointer-events-none absolute left-0 right-0 top-[2.25rem] hidden h-px bg-gradient-to-r from-transparent via-brand-primary/25 to-transparent md:block" />
 
-        {steps.map((step, index) => (
+        {howItWorks.steps.map((step, index) => (
           <motion.div
             key={step.number}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true, margin: "-60px" }}
-            className="relative"
+            className="relative text-center md:text-left"
           >
-            <div className="relative z-10 flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-brand-primary font-display text-2xl font-bold text-white shadow-glow">
+            <div className="relative z-10 mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-2xl bg-brand-primary font-display text-2xl font-bold text-white shadow-glow md:mx-0">
               {step.number}
             </div>
             <h3 className="mt-6 font-display text-lg font-bold text-brand-ink">

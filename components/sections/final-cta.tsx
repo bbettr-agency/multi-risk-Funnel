@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Check, Phone } from "lucide-react";
 
 import { siteConfig } from "@/config/site-config";
-import { heroContent } from "@/config/funnel-config";
+import { heroContent, finalCta } from "@/config/funnel-config";
 import FormPanel from "@/components/funnel/form-panel";
 
 export default function FinalCta() {
@@ -15,7 +15,7 @@ export default function FinalCta() {
       <div className="pointer-events-none absolute -bottom-20 right-1/4 h-80 w-80 rounded-full bg-brand-accent/10 blur-[130px]" />
 
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_0.95fr] lg:gap-16">
-        {/* LEFT — message */}
+        {/* LEFT */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,16 +24,15 @@ export default function FinalCta() {
         >
           <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
             <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" />
-            Ready When You Are
+            {finalCta.eyebrow}
           </div>
 
-          <h2 className="mt-6 max-w-xl font-display text-3xl font-bold leading-[1.08] tracking-tight md:text-4xl lg:text-5xl">
-            Get your tailored insurance quote today.
+          <h2 className="mt-6 max-w-xl font-display text-3xl font-bold leading-[1.1] tracking-tight md:text-4xl lg:text-5xl">
+            {finalCta.title}
           </h2>
 
           <p className="mt-5 max-w-lg text-base leading-7 text-white/70 md:text-lg">
-            Complete the form and an experienced Multi Risk consultant will be
-            in touch shortly with options built around you.
+            {finalCta.description}
           </p>
 
           <ul className="mt-7 grid max-w-md gap-3 sm:grid-cols-2">
@@ -66,12 +65,12 @@ export default function FinalCta() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
           viewport={{ once: true }}
-          className="scroll-mt-28"
+          className="scroll-mt-24"
         >
           <FormPanel
             instanceId="final"
-            heading="Start Your Free Quote"
-            subheading="One quick form. Tailored cover. No obligation."
+            heading="Start your free quote"
+            subheading="One short form. Tailored cover. No obligation."
           />
         </motion.div>
       </div>

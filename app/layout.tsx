@@ -6,6 +6,7 @@ import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/config/site-config";
 import { seoConfig } from "@/config/seo-config";
 import { faqs } from "@/config/funnel-config";
+import { GoogleAdsBase } from "@/components/funnel/analytics";
 
 const body = Inter({
   subsets: ["latin"],
@@ -87,7 +88,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
-      <body className="bg-brand-ink text-white antialiased">{children}</body>
+      <body className="bg-brand-ink text-white antialiased">
+        <GoogleAdsBase />
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,6 +5,7 @@ import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
 import { faqs } from "@/config/funnel-config";
+import { siteConfig } from "@/config/site-config";
 import SectionContainer from "@/components/layout/section-container";
 import SectionHeading from "@/components/ui/section-heading";
 
@@ -24,7 +25,7 @@ export default function FunnelFaq() {
               you ask.
             </>
           }
-          description="A few of the questions we hear most. Still unsure? Call us — we're happy to help."
+          description={`Still unsure? Call us on ${siteConfig.phoneDisplay} — we're happy to help.`}
           className="mb-0"
         />
 
@@ -53,7 +54,6 @@ export default function FunnelFaq() {
                   >
                     {item.question}
                   </span>
-
                   <span
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                       isOpen

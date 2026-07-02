@@ -31,11 +31,9 @@ export default function FunnelHero() {
         }}
       />
 
-      {/* Soft orbs */}
       <div className="pointer-events-none absolute -top-32 right-1/3 h-[480px] w-[480px] rounded-full bg-brand-primary/25 blur-[130px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-[360px] w-[360px] rounded-full bg-brand-accent/10 blur-[120px]" />
 
-      {/* Content */}
       <div className="relative z-10 mx-auto grid min-h-[100svh] max-w-7xl grid-cols-1 items-center gap-12 px-6 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8 lg:pb-20 lg:pt-32">
         {/* LEFT */}
         <motion.div
@@ -43,16 +41,17 @@ export default function FunnelHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-brand-accent backdrop-blur">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-accent backdrop-blur">
             <span className="flex h-1.5 w-1.5 rounded-full bg-brand-accent shadow-[0_0_8px_rgba(201,162,75,0.9)]" />
-            Insurance Broker · {siteConfig.city}, {siteConfig.country}
+            {heroContent.eyebrow}
           </div>
 
-          <h1 className="mt-6 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-            Get The Right Insurance Cover{" "}
+          <h1 className="mt-6 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.5rem]">
+            {heroContent.headline}{" "}
             <span className="bg-gradient-to-r from-brand-accent to-brand-accentDark bg-clip-text text-transparent">
-              Without Overpaying
+              {heroContent.headlineAccent}
             </span>
+            .
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-7 text-white/70 md:text-lg">
@@ -92,7 +91,7 @@ export default function FunnelHero() {
                 ))}
               </div>
               <span className="font-medium text-white/80">
-                Trusted, personalised service
+                {heroContent.ratingLabel}
               </span>
             </div>
           </div>
@@ -104,7 +103,7 @@ export default function FunnelHero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="scroll-mt-28"
+          className="scroll-mt-24"
         >
           <FormPanel instanceId="hero" />
         </motion.div>

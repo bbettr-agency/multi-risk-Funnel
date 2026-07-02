@@ -1,10 +1,14 @@
 import MinimalHeader from "@/components/funnel/minimal-header";
 import MinimalFooter from "@/components/funnel/minimal-footer";
+import StickyCtaBar from "@/components/funnel/sticky-cta-bar";
 import FunnelHero from "@/components/sections/funnel-hero";
-import WhyChoose from "@/components/sections/why-choose";
+import InsurerPartners from "@/components/sections/insurer-partners";
+import CredibilityBand from "@/components/sections/credibility-band";
+import WhyMultiRisk from "@/components/sections/why-multirisk";
 import Solutions from "@/components/sections/solutions";
+import ClaimsPromise from "@/components/sections/claims-promise";
+import Reviews from "@/components/sections/reviews";
 import HowItWorks from "@/components/sections/how-it-works";
-import GoogleReviews from "@/components/sections/google-reviews";
 import FunnelFaq from "@/components/sections/funnel-faq";
 import FinalCta from "@/components/sections/final-cta";
 
@@ -14,14 +18,18 @@ export default function FunnelPage() {
       <MinimalHeader />
       <main>
         <FunnelHero />
-        <WhyChoose />
+        <InsurerPartners />
+        <CredibilityBand />
+        <WhyMultiRisk />
         <Solutions />
+        <ClaimsPromise />
+        <Reviews />
         <HowItWorks />
-        <GoogleReviews />
         <FunnelFaq />
         <FinalCta />
       </main>
       <MinimalFooter />
+      <StickyCtaBar />
     </>
   );
 }

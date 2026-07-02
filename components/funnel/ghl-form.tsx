@@ -1,24 +1,20 @@
 "use client";
 
 import Script from "next/script";
-import { siteConfig } from "@/config/site-config";
+import { formConfig } from "@/config/form-config";
 
 /**
- * GoHighLevel inline form embed (provided by Bbettr).
- *
- * The same form can appear more than once on the page (hero + final CTA), so
- * each instance gets a unique DOM id while sharing the same data-form-id. The
- * GHL form_embed.js script is loaded once (keyed by its fixed id) and handles
- * auto-height resizing and the post-submit redirect to /thank-you (configured
- * inside GoHighLevel itself).
+ * GoHighLevel inline form embed — fallback used only when
+ * form-config `mode === "embed"`. The native <QuoteForm> is the default.
  */
 export default function GhlForm({ instanceId }: { instanceId: string }) {
-  const domId = `inline-${siteConfig.formId}-${instanceId}`;
+  const { embed } = formConfig;
+  const domId = `inline-${embed.formId}-${instanceId}`;
 
   return (
     <>
       <iframe
-        src={siteConfig.formSrc}
+        src={embed.src}
         id={domId}
         title="Request an insurance quote — Multi Risk Brokers"
         style={{
@@ -39,13 +35,9 @@ export default function GhlForm({ instanceId }: { instanceId: string }) {
         data-form-name="Contact Us funnel"
         data-height="492"
         data-layout-iframe-id={domId}
-        data-form-id={siteConfig.formId}
+        data-form-id={embed.formId}
       />
-      <Script
-        id="ghl-form-embed"
-        src={siteConfig.formScript}
-        strategy="afterInteractive"
-      />
+      <Script id="ghl-form-embed" src={embed.script} strategy="afterInteractive" />
     </>
   );
 }

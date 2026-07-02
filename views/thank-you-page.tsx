@@ -6,6 +6,7 @@ import { BadgeCheck, CheckCircle2, Phone, UserCheck, Clock } from "lucide-react"
 import { siteConfig } from "@/config/site-config";
 import MinimalHeader from "@/components/funnel/minimal-header";
 import MinimalFooter from "@/components/funnel/minimal-footer";
+import { ConversionEvent } from "@/components/funnel/analytics";
 
 const statusPoints = [
   {
@@ -15,8 +16,8 @@ const statusPoints = [
   },
   {
     icon: UserCheck,
-    title: "Consultant Assigned",
-    description: "An experienced Multi Risk consultant will review your needs.",
+    title: "Broker Assigned",
+    description: "A dedicated Multi Risk broker will review your needs.",
   },
   {
     icon: Clock,
@@ -28,6 +29,7 @@ const statusPoints = [
 export default function ThankYouPage() {
   return (
     <>
+      <ConversionEvent />
       <MinimalHeader />
       <main className="relative flex min-h-[100svh] items-center overflow-hidden bg-brand-ink px-6 py-28 text-white lg:px-8">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-charcoal via-brand-ink to-brand-charcoal" />
@@ -59,8 +61,8 @@ export default function ThankYouPage() {
             transition={{ duration: 0.7, delay: 0.18 }}
             className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/70 md:text-lg"
           >
-            A Multi Risk consultant will review your request and contact you
-            shortly.
+            A dedicated Multi Risk broker will review your request and call you
+            back shortly.
           </motion.p>
 
           {/* Status points */}
