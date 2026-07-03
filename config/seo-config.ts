@@ -29,3 +29,11 @@ export const conversionConfig = {
   gtagId: "", // e.g. "AW-XXXXXXXXX"
   conversionLabel: "", // e.g. "AbC-D_efG..."
 };
+
+// Google Tag Manager — loaded site-wide via the root layout.
+// GTM can then manage GA4, Google Ads conversions, Meta Pixel, etc. from its
+// own dashboard, so you rarely need to touch the code again. Leave empty to
+// disable. Set gtmId to "" to turn GTM off.
+export const analyticsConfig = {
+  gtmId: "GTM-PLFJ454P",
+};

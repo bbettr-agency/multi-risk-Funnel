@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site-config";
 import { seoConfig } from "@/config/seo-config";
 import { faqs } from "@/config/funnel-config";
 import { GoogleAdsBase } from "@/components/funnel/analytics";
+import { GtmScript, GtmNoScript } from "@/components/analytics/gtm";
 
 const body = Inter({
   subsets: ["latin"],
@@ -78,6 +79,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        {/* Google Tag Manager — loaded as high in <head> as Next allows */}
+        <GtmScript />
         <meta name="theme-color" content="#0A1A30" />
         <script
           type="application/ld+json"
@@ -89,6 +92,8 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-brand-ink text-white antialiased">
+        {/* Google Tag Manager (noscript) — immediately after opening <body> */}
+        <GtmNoScript />
         <GoogleAdsBase />
         {children}
       </body>
