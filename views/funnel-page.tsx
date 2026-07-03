@@ -1,6 +1,7 @@
 import MinimalHeader from "@/components/funnel/minimal-header";
 import MinimalFooter from "@/components/funnel/minimal-footer";
 import StickyCtaBar from "@/components/funnel/sticky-cta-bar";
+import FloatingContact from "@/components/funnel/floating-contact";
 import FunnelHero from "@/components/sections/funnel-hero";
 import InsurerPartners from "@/components/sections/insurer-partners";
 import CredibilityBand from "@/components/sections/credibility-band";
@@ -30,6 +31,7 @@ export default function FunnelPage() {
       </main>
       <MinimalFooter />
       <StickyCtaBar />
+      <FloatingContact />
     </>
   );
 }

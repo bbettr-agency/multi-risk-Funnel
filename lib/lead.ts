@@ -5,7 +5,7 @@ export type LeadPayload = {
   needs: string[];
   name: string;
   phone: string;
-  email?: string;
+  email: string;
   message?: string;
   // Attribution (populated client-side from the URL / referrer)
   source?: string;
@@ -32,7 +32,10 @@ export function validateLead(data: Partial<LeadPayload>): {
   const digits = phone.replace(/\D/g, "");
   if (digits.length < 9) errors.push("Please enter a valid phone number.");
 
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  // Email is required.
+  if (!email) {
+    errors.push("Please enter your email address.");
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     errors.push("Please enter a valid email address.");
   }
 
@@ -41,7 +44,7 @@ export function validateLead(data: Partial<LeadPayload>): {
     needs: Array.isArray(data.needs) ? data.needs.slice(0, 10) : [],
     name,
     phone,
-    email: email || undefined,
+    email,
     message: (data.message ?? "").toString().trim().slice(0, 1000) || undefined,
     source: (data.source ?? "").toString().slice(0, 200) || undefined,
     pageUrl: (data.pageUrl ?? "").toString().slice(0, 500) || undefined,

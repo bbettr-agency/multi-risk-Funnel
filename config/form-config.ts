@@ -91,7 +91,7 @@ export const formConfig = {
     namePlaceholder: "e.g. Johan van der Merwe",
     phoneLabel: "Phone number",
     phonePlaceholder: "072 000 0000",
-    emailLabel: "Email (optional)",
+    emailLabel: "Email address",
     emailPlaceholder: "you@email.com",
     messageLabel: "Anything we should know? (optional)",
     messagePlaceholder: "Tell us briefly what you'd like to cover…",

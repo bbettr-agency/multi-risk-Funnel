@@ -62,7 +62,8 @@ export default function QuoteForm({ compact = false }: Props) {
     const digits = phone.replace(/\D/g, "");
     if (name.trim().length < 2) return setError("Please enter your full name.");
     if (digits.length < 9) return setError("Please enter a valid phone number.");
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    if (!email.trim()) return setError("Please enter your email address.");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
       return setError("Please enter a valid email address.");
 
     setSubmitting(true);
@@ -241,6 +242,7 @@ export default function QuoteForm({ compact = false }: Props) {
                 type="email"
                 inputMode="email"
                 autoComplete="email"
+                required
               />
               <div>
                 <label className="mb-1.5 block text-sm font-semibold text-brand-ink/80">
@@ -333,6 +335,7 @@ function Field({
     <div>
       <label className="mb-1.5 block text-sm font-semibold text-brand-ink/80">
         {label}
+        {required && <span className="ml-0.5 text-red-500">*</span>}
       </label>
       <input
         type={type}
