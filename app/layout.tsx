@@ -8,6 +8,7 @@ import { seoConfig } from "@/config/seo-config";
 import { faqs } from "@/config/funnel-config";
 import { GoogleAdsBase } from "@/components/funnel/analytics";
 import { GtmScript, GtmNoScript } from "@/components/analytics/gtm";
+import { Analytics } from "@vercel/analytics/next";
 
 const body = Inter({
   subsets: ["latin"],
@@ -96,6 +97,7 @@ export default function RootLayout({
         <GtmNoScript />
         <GoogleAdsBase />
         {children}
+        <Analytics />
       </body>
     </html>
   );
