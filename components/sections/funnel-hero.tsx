@@ -76,9 +76,9 @@ export default function FunnelHero() {
           <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-center">
             <a
               href={siteConfig.phoneLink}
-              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-accent px-7 py-4 text-base font-bold text-brand-ink shadow-accent transition-all duration-300 hover:bg-white"
+              className="group inline-flex shrink-0 items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-brand-accent px-7 py-4 text-base font-bold text-brand-ink shadow-accent transition-all duration-300 hover:bg-white"
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-5 w-5 shrink-0" />
               {siteConfig.phoneDisplay}
             </a>
             <div className="flex items-center gap-2.5 text-sm text-white/65">
